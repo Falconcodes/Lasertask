@@ -60,9 +60,9 @@ one relay for electromagnetic lock
     
   while(1) {
   
-    if (!RED_PIN)   {RED_LAMP=1;   red=1;  }
-    if (!GREEN_PIN) {GREEN_LAMP=1; green=1;}
-    if (!BLUE_PIN)  {BLUE_LAMP=1;  blue=1; }
+    if (!RED_PIN)   {delay_ms(1); if (!RED_PIN)   {RED_LAMP=1;   red=1;  }}
+    if (!GREEN_PIN) {delay_ms(1); if (!GREEN_PIN) {GREEN_LAMP=1; green=1;}}
+    if (!BLUE_PIN)  {delay_ms(1); if (!BLUE_PIN)  {BLUE_LAMP=1;  blue=1; }}
     
     if (red && green && blue) {
     PORTB.5=1;    //штатный светодиод на плате
